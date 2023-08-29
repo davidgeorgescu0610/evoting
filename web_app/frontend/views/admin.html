@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eVoting</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <script src="https://kit.fontawesome.com/d058c2e4d4.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/admin.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <ul>
+                    <li><button onclick="goHome()">ACASĂ</button></li>
+                    <li><button onclick="stayHere()">VOTARE</button></li>
+                    <li><button onclick="addVotingSession()"><i class="fa-sharp fa-solid fa-plus"></i></button></li>
+                </ul>
+            </div>
+            <div class="auth-links">
+                <ul>
+                    <li class="login" id="login"><button onclick="login()">INTRĂ ÎN CONT</button></li>
+                    <li class="logout" id="logout"><button onclick="logout()">IEȘI DIN CONT</button></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="not-loggedin-content" id="not-loggedin-content">
+            <h1>Intră în cont pentru a accesa funcționalitățile de votare.</h1>
+        </div>
+        <div class="voting-sessions" id="voting-sessions">
+            <table>
+                <thead>
+                    <tr>
+                      <th>NUME</th>
+                      <th>DATĂ</th>
+                      <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="pop-up" id="pop-up">
+        <i class="fa-solid fa-xmark" onclick="exitPopup()"></i>
+        <div class="box" id="box">
+            <nav class="nav-bar" id="box-nav-bar"><h2>ADAUGĂ O SESIUNE DE VOTARE</h2></nav>
+            <div class="form" id="form">
+                <div class="warn" id="warn">
+                    <p id="empty"></p>
+                </div>
+                <div id="loading-container">
+                    <div class="spinner"></div>
+                </div>
+                <input type="text" class="name" id="name" placeholder="NUME ALEGERI">
+                <input type="file" class="file" id="file">
+                <button onclick="sendNewVotingSession()">ADAUGĂ</button>
+            </div>
+        </div>        
+    </div>
+    <div class="pop-up1" id="pop-up1">
+        <i class="fa-solid fa-xmark" onclick="exitPopup1()"></i>
+        <div class="box" id="box1">
+            <nav class="nav-bar" id="box-nav-bar1"></nav>
+            <div class="buttons" id="box-buttons1">
+                <button onclick="startVoting()">START VOT</button>
+                <button onclick="finishVoting()">STOP VOT</button>
+                <div class="warn" id="warn1">
+                    <p id="empty1"></p>
+                </div>
+                <div id="loading-container1">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+
+</html>

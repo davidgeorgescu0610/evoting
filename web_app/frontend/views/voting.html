@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eVoting</title>
+    <link rel="stylesheet" href="../assets/css/voting.css">
+    <script src="https://kit.fontawesome.com/d058c2e4d4.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/voting.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <ul>
+                    <li><button onclick="goHome()">ACASĂ</button></li>
+                    <li><button onclick="stayHere()">VOTARE</button></li>
+                    <li><button onclick="goToAdmin()">ADMIN</button></li>
+                </ul>
+            </div>
+            <div class="auth-links">
+                <ul>
+                    <li class="login" id="login"><button onclick="login()">INTRĂ ÎN CONT</button></li>
+                    <li class="logout" id="logout"><button onclick="logout()">IEȘI DIN CONT</button></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="not-loggedin-content" id="not-loggedin-content">
+            <h1>Intră în cont pentru a accesa funcționalitățile de votare.</h1>
+        </div>
+        <div class="voting-sessions" id="voting-sessions">
+            <table>
+                <thead>
+                    <tr>
+                      <th>NUME</th>
+                      <th>DATĂ</th>
+                      <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="pop-up" id="pop-up">
+        <i class="fa-solid fa-xmark" onclick="exitPopup()"></i>
+        <div class="box" id="box">
+            <nav class="nav-bar" id="box-nav-bar"></nav>
+            <div class="buttons" id="box-buttons">
+                <button onclick="vote()">VOTEAZĂ</button>
+                <button onclick="showResults()">VEZI REZULTATUL ALEGERILOR</button>
+                <div class="warn" id="warn1">
+                    <p id="empty1"></p>
+                </div>
+            </div>
+            <div class="candidates" id="candidates">
+                <ul id="candidates-list">
+                </ul>
+                <div class="goback-button">
+                    <button onclick="goBack()">ÎNAPOI</button>
+                </div>
+            </div>
+            <div class="results" id="results">
+                <div class="results-table">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>CANDIDAT</th>
+                              <th>NUMĂR DE VOTRUI</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-list">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="goback-button">
+                    <button onclick="goBack()">ÎNAPOI</button>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="vote-pop-up" id="vote-pop-up">
+        <div class="box">
+            <div class="question">
+                <h3 class="candidate-name" id="candidate-name"></h3>
+                <h3 class="question" id="question">Sunteți sigur/ă că votați acest candidat?</h3>
+                <h3 class="question" id="question">Dacă DA, introduceți cheia privată din email și apăsați butonul DA.</h3>
+            </div>
+            <div class="input">
+                <input type="password" id="pass" placeholder="CHEIA PRIVATĂ">
+            </div>
+            <div class="warning">
+                <p id="warning"></p>
+            </div>
+	    <div id="loading-container">
+	        <div class="spinner"></div>
+	    </div>
+            <div class="yes-no-buttons">
+                <button id="yes">DA</button>
+                <button onclick="no()">NU</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

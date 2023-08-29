@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eVoting</title>
+    <link rel="stylesheet" href="../assets/css/entry.css">
+    <script src="https://kit.fontawesome.com/d058c2e4d4.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/login.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>eVoting</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-id-card"></i>
+                        <input type="text" id="cnp" placeholder="CNP">
+                        <div class="fa-solid fa-circle-exclamation"></div>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="pass" placeholder="Parolă">
+                        <div class="fa-solid fa-circle-exclamation"></div> 
+                    </div>
+
+                    <div class="warn">
+                        <p id="empty">Toate câmpurile sunt obligatorii!</p>
+                    </div>
+                    <div class="warn">
+                        <p id="invalid-mail">Adresa de mail are un format invalid!</p>
+                    </div>
+                    <div class="warn">
+                        <p id="pass-match">Parola și confirmarea parolei nu sunt identice!</p>
+                    </div>
+                    <div class="warn">
+                        <p id="response"></p>
+                    </div>
+                </div>
+
+                <a href="/register">Nu ai cont?</a>
+
+                <div class="btn-field">
+                    <button type="button" id="signUpBtn" onclick="login()">Intră în cont</button>
+                </div>
+            </form>            
+        </div>
+    </div>
+</body>
+
+</html>
